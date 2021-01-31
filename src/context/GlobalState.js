@@ -4,11 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 const initialState = {
-    posts: [
-    {id: uuidv4(), title: 'First Blog ever', description: 'here is text', 
-    img: 'https://images.unsplash.com/photo-1490507278117-59a4ccd0165f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80', dateFormat: 'January 31, 2021'}, 
-    {id: uuidv4(), title: 'Second Blog', description: 'here is text',img: 'https://images.unsplash.com/photo-1573760203986-2dec90daa763?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8&auto=format&fit=crop&w=500&q=60', dateFormat: 'January 31, 2021'},
-    ]
+    posts: []
 };
 
 // context

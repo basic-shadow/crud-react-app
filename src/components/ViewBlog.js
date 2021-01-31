@@ -33,17 +33,18 @@ maxHeight: '60%'
 export default function ViewBlog(props) {
   const currentId = props.match.params.id;
   const { posts, removePost} = React.useContext(GlobalContext);
-  const {id, title, description, img, dateFormat} = posts.find((item) => {return item.id === currentId});
-  
+  const {id, title, description, img, dateFormat} = posts.find((item) => {return item.id === currentId}) ?? 
+      props.history.location.state.initialPosts.find(item => {return item.id === currentId});
+  const initialPost = {id, title, description, img, dateFormat};
   const history = useHistory();
   
   const onDelete = () => {
       removePost(id);
-      history.push('/');
+      history.push({pathname: '/', state: {description, title}});
   }
 
   const onEdit = () => {
-    history.push(`/edit/${id}`);
+    history.push({pathname: `/edit/${id}`, state: {initialPost}});
   }
   
   return (
@@ -79,7 +80,7 @@ export default function ViewBlog(props) {
             </div>
             </div>
             <div style={{display: 'flex', width: '50%', justifyContent: 'space-evenly', alignItems: 'center'}} >
-                <Button color="primary" outline onClick={onEdit}>Edit</Button>
+                <Button color="primary" onClick={onEdit} outline>Edit</Button>
                 <Button color="danger" outline onClick={onDelete}>Delete</Button>
                 <Link to="/" >Go Back</Link>
             </div>

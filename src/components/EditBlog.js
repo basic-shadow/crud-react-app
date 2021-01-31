@@ -17,7 +17,8 @@ export default function EditBlog(props) {
   const currentId = props.match.params.id;
   const {posts, editPost} = React.useContext(GlobalContext);
   const history = useHistory();
-  const {id, title, description, img} = posts.find((item) => {return item.id === currentId});
+  const {id, title, description, img} = posts.find((item) => {return item.id === currentId}) ?? 
+  props.history.location.state.initialPost;
   const [titleName, setTitleName] = useState(title);
   const [imgURL, setImgURL] = useState(img);
   const [descriptionName, setDescriptionName] = useState(description);
@@ -48,7 +49,7 @@ export default function EditBlog(props) {
       };
       
       editPost(post);
-      history.push('/');
+      history.push({pathname: '/', state: {type: 'delete', id}});
   }
 
 
