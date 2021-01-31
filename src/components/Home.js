@@ -60,7 +60,7 @@ var bg  = {
 
 var initialData = [
   {id: uuidv4(), title: 'First Blog ever', description: 'So if any of you are on the prowl for some new non-recipe blogs, I thought I’d share 7 of my favorites with you today.  I’m guessing you’ll be familiar with a few, but I’m hoping there might be a few new gems in there for you to discover.  And hey — if you have some favorites of your own, pretty please share them in the comments below, because I totally want to check ’em out.', 
-  img: 'https://images.unsplash.com/photo-1490507278117-59a4ccd0165f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80', 
+  img: 'https://images.unsplash.com/photo-1503457574462-bd27054394c1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80', 
   dateFormat: 'January 31, 2021'}
 ];
 
